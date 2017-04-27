@@ -9,4 +9,5 @@ class PHCities extends PHBaseModel
     protected $table = 'ph_cities';
 
     protected $fillable = ['id', 'name'];
+
 }

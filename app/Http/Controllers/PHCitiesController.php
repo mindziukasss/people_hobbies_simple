@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Models\PHCities;
 use Illuminate\Routing\Controller;
 
 class PHCitiesController extends Controller {
@@ -12,7 +13,7 @@ class PHCitiesController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		return view('createdcities');
 	}
 
 	/**
@@ -23,7 +24,12 @@ class PHCitiesController extends Controller {
 	 */
 	public function create()
 	{
-		//
+	    $data = request()->all();
+
+	    PHCities::create(array(
+	        'name' => $data['city']
+        ));
+
 	}
 
 	/**

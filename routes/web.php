@@ -22,6 +22,12 @@ Route::group(['prefix' => 'generate-fd'], function () {
     Route::get('/hobies/{count?}', ['uses' => 'PHFakeDataController@generateHobies']);
     Route::get('/connections/{count?}', ['uses' => 'PHFakeDataController@generateConnectionsPeopleHobies']);
 
+});
 
+Route::group(['prefix' => 'cities'], function () {
+
+
+    Route::post('/create', ['as' => 'cities.create', 'uses' => 'PHCitiesController@create']);
+    Route::get('/create', ['uses' => 'PHCitiesController@index']);
 
 });
