@@ -13,7 +13,7 @@ class PHPeopleController extends Controller {
 	 */
 	public function index()
 	{
-        return PHPeople::with(['cities'])->get();
+        return PHPeople::with(['cities','hobbiesConect'])->get();
 	}
 
 	/**

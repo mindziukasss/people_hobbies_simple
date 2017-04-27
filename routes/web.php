@@ -28,12 +28,12 @@ Route::group(['prefix' => 'cities'], function () {
     Route::get('/', ['uses' => 'PHCitiesController@index']);
 });
 
-Route::group(['prefix' => 'people'], function () {
-    Route::get('/', ['uses' => 'PHPeopleController@index']);
-});
-
 Route::group(['prefix' => 'hobbies'], function () {
     Route::get('/', ['uses' => 'PHHobiesController@index']);
+});
+
+Route::group(['prefix' => 'people'], function () {
+    Route::get('/', ['uses' => 'PHPeopleController@index']);
 });
 
 

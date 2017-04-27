@@ -18,6 +18,8 @@ class PHPeople extends PHBaseModel
 
     public function hobbiesConect()
     {
-        return $this->hasMany(PHConnectionsPeopleHobbies::class, 'hobbies_id', 'id')->with(['conect']);
+        return $this->hasMany(PHConnectionsPeopleHobbies::class, 'hobbies_id', 'id');
+
     }
+
 }
