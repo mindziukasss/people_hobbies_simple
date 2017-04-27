@@ -11,7 +11,7 @@ class PHBaseModel extends Model
     use SoftDeletes;
 
     public $incrementing = false;
-    public $updated_at = false;
+
 
     protected static function boot()
     {

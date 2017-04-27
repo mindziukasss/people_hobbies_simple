@@ -9,5 +9,5 @@ class PHPeople extends PHBaseModel
 {
     protected $table = 'ph_people';
 
-    protected $fillable = ['id', 'name', 'surname', 'phone_number'];
+    protected $fillable = ['id', 'name', 'surname', 'phone_number', 'city_id'];
 }

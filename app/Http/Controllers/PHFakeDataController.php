@@ -15,11 +15,12 @@ use App\Models\PHHobies;
 use App\Models\PHPeople;
 use Faker\Factory;
 
-class WPFakeDataController
+class PHFakeDataController extends Controller
 {
     public function generatePeople(int $count = 2)
     {
         $faker = Factory::create();
+
         for ($i = 0; $i < $count; $i++) {
             PHPeople::create([
                 'id' => $faker->uuid,

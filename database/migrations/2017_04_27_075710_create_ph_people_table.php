@@ -17,7 +17,7 @@ class CreatePhPeopleTable extends Migration {
 			$table->integer('count', true);
 			$table->string('id', 36)->unique('id');
 			$table->timestamps();
-			$table->dateTime('delete_at')->nullable();
+			$table->dateTime('deleted_at')->nullable();
 			$table->string('city_id', 36)->index('fk_ph_people_ph_cities_idx');
 			$table->string('name');
 			$table->string('surname');
