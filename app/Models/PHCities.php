@@ -10,4 +10,10 @@ class PHCities extends PHBaseModel
 
     protected $fillable = ['id', 'name'];
 
+    public function people()
+    {
+        return $this->hasMany(PHPeople::class, 'city_id', 'id')->with(['hobbiesConect']);
+    }
+
+
 }

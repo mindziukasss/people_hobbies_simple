@@ -1,41 +1,35 @@
 <?php namespace App\Http\Controllers;
 
-use App\Models\PHCities;
+use App\Models\PHHobies;
 use Illuminate\Routing\Controller;
 
-class PHCitiesController extends Controller {
+class PHHobiesController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /phcities
+	 * GET /phhobies
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-	    return PHCities::with(['people'])->get();
-//		return view('createdcities');
+		return PHHobies::with(['conect'])->get();
 	}
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /phcities/create
+	 * GET /phhobies/create
 	 *
 	 * @return Response
 	 */
 	public function create()
 	{
-	    $data = request()->all();
-
-	    PHCities::create(array(
-	        'name' => $data['city']
-        ));
-
+		//
 	}
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /phcities
+	 * POST /phhobies
 	 *
 	 * @return Response
 	 */
@@ -46,7 +40,7 @@ class PHCitiesController extends Controller {
 
 	/**
 	 * Display the specified resource.
-	 * GET /phcities/{id}
+	 * GET /phhobies/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -58,7 +52,7 @@ class PHCitiesController extends Controller {
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /phcities/{id}/edit
+	 * GET /phhobies/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -70,7 +64,7 @@ class PHCitiesController extends Controller {
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /phcities/{id}
+	 * PUT /phhobies/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -82,7 +76,7 @@ class PHCitiesController extends Controller {
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /phcities/{id}
+	 * DELETE /phhobies/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
