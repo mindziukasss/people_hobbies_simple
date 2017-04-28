@@ -31,6 +31,7 @@ Route::group(['prefix' => 'cities'], function () {
 });
 
 Route::group(['prefix' => 'hobbies'], function () {
+    Route::post('/create', ['as' => 'hobbies.create', 'uses' => 'PHHobiesController@create']);
     Route::get('/', ['uses' => 'PHHobiesController@index']);
 });
 

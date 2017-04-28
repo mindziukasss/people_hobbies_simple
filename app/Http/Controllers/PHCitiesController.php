@@ -27,9 +27,11 @@ class PHCitiesController extends Controller {
 	{
 	    $data = request()->all();
 
-	    PHCities::create(array(
+	    $record = PHCities::create(array(
 	        'name' => $data['city']
         ));
+
+	    return view('createdcities', $record->toArray());
 
 	}
 

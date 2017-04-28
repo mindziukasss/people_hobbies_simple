@@ -13,7 +13,8 @@ class PHHobiesController extends Controller {
 	 */
 	public function index()
 	{
-		return PHHobies::with(['conect'])->get();
+//		return PHHobies::with(['conect'])->get();
+        return view('hobbiescreated');
 	}
 
 	/**
@@ -23,10 +24,15 @@ class PHHobiesController extends Controller {
 	 * @return Response
 	 */
 	public function create()
-	{
-		//
-	}
+    {
+        $data = request()->all();
 
+        $record = PHHobies::create(array(
+            'name' => $data['hobbies']
+        ));
+
+        return view('hobbiescreated', $record->toArray());
+    }
 	/**
 	 * Store a newly created resource in storage.
 	 * POST /phhobies

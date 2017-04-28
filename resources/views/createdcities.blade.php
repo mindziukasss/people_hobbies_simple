@@ -1,13 +1,14 @@
 
 
+{!! Form::open(['url' => route('cities.create')]) !!}
+    {{ Form::label('city', 'City')}}
+    {{ Form::text('city') }}
+    {{ Form::submit('OK') }}
+{!! Form::close() !!}
 
 
+@if(isset($name))
 
+    <div style="background: green"> Citi create: {{ $name }}</div>
 
-<form method="POST" action="{{ route('cities.create') }}" >
-    <input type="text" name="city" value=""  placeholder="City Name" />
-    <br/>
-    <input type="submit" value="Submit"/>
-
-    {{ csrf_field() }}
-</form>
+@endif
