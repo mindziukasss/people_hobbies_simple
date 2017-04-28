@@ -1,6 +1,8 @@
 <?php namespace App\Http\Controllers;
 
 use App\Models\PHCities;
+use App\Models\PHConnectionsPeopleHobbies;
+use App\Models\PHHobies;
 use App\Models\PHPeople;
 use Illuminate\Routing\Controller;
 
@@ -15,6 +17,7 @@ class PHPeopleController extends Controller {
 	public function index()
 	{
 	    $data['cities'] = PHCities::pluck('name', 'id')->toArray();
+	    $data['hobbies'] = PHHobies::pluck('name', 'id')->toArray();
 //        return PHPeople::with(['cities','hobbiesConect'])->get();
         return view('peoplecreated', $data);
 	}
@@ -28,7 +31,7 @@ class PHPeopleController extends Controller {
 	public function create()
 	{
         $data = request()->all();
-
+//        dd($data);
         $record = PHPeople::create(array(
             'name' => $data['name'],
             'surname' => $data['surname'],
@@ -36,8 +39,10 @@ class PHPeopleController extends Controller {
             'city_id' => $data['city'] ,
         ));
 
-        $record['cities'] = PHCities::pluck('name', 'id')->toArray();
+        $record->hobbiesConect()->sync($data['hobbies']);
 
+        $record['cities'] = PHCities::pluck('name', 'id')->toArray();
+        $record['hobbies'] = PHHobies::pluck('name', 'id')->toArray();
         return view('peoplecreated', $record->toArray());
 	}
 

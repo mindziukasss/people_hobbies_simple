@@ -11,7 +11,11 @@
     {{ Form::label('phone_number', 'PH number')}}
     {{ Form::text('phone_number') }}
     {{ Form::select('city',$cities) }}
-    
+
+@foreach($hobbies as $key => $hoby)
+    {{ Form::checkbox('hobbies[]', $key)}}
+    {{$hoby}}
+@endforeach
 
 
 
@@ -26,9 +30,9 @@
 {!! Form::close() !!}
 
 
-{{--@if(isset($name))--}}
+@if(isset($name))
 
-    {{--<div style="background: green"> Citi create: {{ $name }}</div>--}}
+    <div style="background: green"> OOOO!!!!: {{ $name }}</div>
 
 
-{{--@endif--}}
+@endif
