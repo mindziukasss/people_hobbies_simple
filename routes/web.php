@@ -25,6 +25,8 @@ Route::group(['prefix' => 'generate-fd'], function () {
 });
 
 Route::group(['prefix' => 'cities'], function () {
+//    Route::get('/', ['uses' => 'PHCitiesController@index']);
+    Route::post('/create', ['as' => 'cities.create', 'uses' => 'PHCitiesController@create']);
     Route::get('/', ['uses' => 'PHCitiesController@index']);
 });
 
@@ -41,7 +43,5 @@ Route::group(['prefix' => 'people'], function () {
 
 //Route::group(['prefix' => 'cities'], function () {
 //
-//    Route::post('/create', ['as' => 'cities.create', 'uses' => 'PHCitiesController@create']);
-//    Route::get('/create', ['uses' => 'PHCitiesController@index']);
 //
 //});

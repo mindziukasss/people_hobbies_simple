@@ -13,8 +13,8 @@ class PHCitiesController extends Controller {
 	 */
 	public function index()
 	{
-	    return PHCities::with(['people'])->get();
-//		return view('createdcities');
+//	    return PHCities::with(['people'])->get();
+		return view('createdcities');
 	}
 
 	/**
