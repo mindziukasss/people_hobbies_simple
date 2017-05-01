@@ -22,4 +22,10 @@ class PHPeople extends PHBaseModel
 
     }
 
+    public function hobbies()
+    {
+        return $this->belongsToMany(PHHobies::class, 'ph_people_hobbies_connections','people_id',
+            'hobbies_id');
+    }
+
 }

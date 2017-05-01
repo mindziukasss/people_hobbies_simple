@@ -39,7 +39,7 @@ class PHPeopleController extends Controller {
             'city_id' => $data['city'] ,
         ));
 
-        $record->hobbiesConect()->sync($data['hobbies']);
+        $record->hobbies()->sync($data['hobbies']);
 
         $record['cities'] = PHCities::pluck('name', 'id')->toArray();
         $record['hobbies'] = PHHobies::pluck('name', 'id')->toArray();
